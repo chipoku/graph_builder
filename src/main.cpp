@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "graph_builder.h"
 #include "objects/line.h"
+#include "objects/text.h"
 
 /*
 class graph_builder {
@@ -11,7 +12,7 @@ public:
 	const sf::Vector2f line_x_pos = sf::Vector2f(0, window.getSize().y/2);
 	const sf::Vector2f line_y_size = sf::Vector2f(window.getSize().x, 2);
 	const sf::Vector2f line_y_pos = sf::Vector2f(window.getSize().x/2, 0);
-	
+	// DST here
 
 	sf::RectangleShape line_x() {
 		sf::RectangleShape line(line_x_size);
@@ -35,9 +36,16 @@ public:
 
 int main() {
 	graph_builder gb;
+	if(!gb.window.isOpen()) {
+		std::cout << "ERROR! SFML WINDOW IS NOT OPENED! ABORT!";
+		return -1;
+	}
 
+	text text;	
 	line line;
-	line.window.close();
+//	line.window.close(); // yeah, fucking crutches
+
+
 	while (gb.window.isOpen()) {
 		sf::Event event;
 		while (gb.window.pollEvent(event)) {
@@ -53,7 +61,6 @@ int main() {
 		gb.window.display();
 	}
 	
-
 
     return 0;
 }

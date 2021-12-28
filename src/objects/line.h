@@ -2,7 +2,7 @@
 #define LINE_H
 
 #include "graph_builder.h"
-#include <iostream>
+
 
 class line : public graph_builder {
 private:
@@ -12,7 +12,9 @@ private:
 	const sf::Vector2f line_y_pos = sf::Vector2f(window.getSize().x/2, 0);
 
 public:
-    sf::RectangleShape line_x();
+    line();
+
+    sf::RectangleShape line_x();// DST here
     sf::RectangleShape line_y();
 };
 
