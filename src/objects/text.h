@@ -11,8 +11,8 @@ private:
 
 public:
     text();
-    
-    draw_text()
+
+    void draw_text()
 
     ~text();
 };
