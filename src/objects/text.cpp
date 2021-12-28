@@ -12,6 +12,6 @@ text::text() {
     }
 };
 
-text::draw_text() {};
+void text::draw_text() {};
 
 text::~text() {};
